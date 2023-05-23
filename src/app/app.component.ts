@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { OrderItemComponent } from './order-item.component';
 
 export interface Pizza {
   name: string;
@@ -29,7 +30,7 @@ export class Order {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, FormsModule],
+  imports: [CommonModule, RouterOutlet, FormsModule, OrderItemComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
