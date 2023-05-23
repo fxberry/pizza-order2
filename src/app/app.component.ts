@@ -46,4 +46,8 @@ export class AppComponent {
     ];
   }
 
+  submitOrder() {
+    alert('Pizzas wurden bestellt an ' + this.order.email);
+  }
+
 }
