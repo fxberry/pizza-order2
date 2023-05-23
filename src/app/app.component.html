@@ -1,11 +1,8 @@
 <h1>Bestellformular</h1>
 
 <div>Email: <input type="text" [value]="order.email"></div>
-<order-item></order-item>
 <ul>
-  <li *ngFor="let orderItem of order.orderItems">{{ orderItem.pizza.name }} x
-    <input type="number" [(ngModel)]="orderItem.amount" min="0" />
-      = {{ orderItem.amount * orderItem.pizza.price }}</li>
+  <order-item *ngFor="let orderItem of order.orderItems" [orderItem]="orderItem"></order-item>
 </ul>
 
 <div>Total: <strong>{{ order.orderTotal }}</strong></div>
