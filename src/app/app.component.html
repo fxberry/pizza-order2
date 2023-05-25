@@ -1,6 +1,6 @@
 <h1>Bestellformular</h1>
 
-<div>Email: <input type="text" [value]="order.email"></div>
+<div>Email: <input type="text" [(ngModel)]="order.email"></div>
 <ul>
   <order-item *ngFor="let orderItem of order.orderItems" [orderItem]="orderItem"></order-item>
 </ul>

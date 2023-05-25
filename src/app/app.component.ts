@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { OrderItemComponent } from './order-item.component';
 import { FormsModule } from '@angular/forms';
+import { BakeService } from './services/bake.service';
 
 export interface Pizza {
   name: string;
@@ -38,7 +39,7 @@ export class AppComponent {
   title = 'pizza-order2';
   order: Order = new Order();
 
-  constructor() {
+  constructor(private bakeService: BakeService) {
     this.order.email = 'meine@email.com';
     this.order.orderItems = [
       { amount: 1, pizza: { name: 'Margaritha', price: 12 } },
@@ -48,7 +49,10 @@ export class AppComponent {
   }
 
   submitOrder() {
-    alert('Pizzas wurden bestellt an ' + this.order.email);
+    alert('Pizzas wurden bestellt an ' + this.order.email + '!');
+    alert('Die Bestellung wird in ' +
+              this.bakeService.calculateBakeTimeForOrder(this.order) +
+              ' Minuten fertig gebachen sein');
   }
 
 }
