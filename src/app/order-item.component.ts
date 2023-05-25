@@ -8,7 +8,6 @@ import { FormsModule } from '@angular/forms';
   imports: [FormsModule],
   standalone: true
 })
-
 export class OrderItemComponent implements OnInit {
 
   @Input() orderItem!: OrderItem;
