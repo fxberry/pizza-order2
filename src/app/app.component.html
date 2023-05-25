@@ -1,12 +1,7 @@
-<h1>Bestellformular</h1>
-
-<div>Email: <input type="text" [(ngModel)]="order.email"></div>
 <ul>
-  <order-item *ngFor="let orderItem of order.orderItems"
-              [orderItem]="orderItem"
-              (orderAmountChanged)="orderAmountChanged($event)"></order-item>
+  <li><a [routerLink]="['/order']">Bestellung</a></li>
+  <li><a [routerLink]="['/contact']">Kontakt</a></li>
 </ul>
 
-<div>Total: <strong>{{ order.orderTotal }}</strong></div>
-
-<button type="button" (click)="submitOrder()">Bestellen!</button>
+<div>Router Outlet:</div>
+<router-outlet></router-outlet>

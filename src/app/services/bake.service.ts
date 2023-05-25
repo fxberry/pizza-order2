@@ -1,4 +1,5 @@
-import { Order } from '../app.component';
+import { Order } from "../order.component";
+
 
 export class BakeService {
   constructor() { }
