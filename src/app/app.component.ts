@@ -59,5 +59,4 @@ export class AppComponent {
   orderAmountChanged(newOrderAmount: number) {
     console.log('new order amount: ' + newOrderAmount);
   }
-
 }

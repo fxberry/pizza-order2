@@ -2,7 +2,9 @@
 
 <div>Email: <input type="text" [(ngModel)]="order.email"></div>
 <ul>
-  <order-item *ngFor="let orderItem of order.orderItems" [orderItem]="orderItem"></order-item>
+  <order-item *ngFor="let orderItem of order.orderItems"
+              [orderItem]="orderItem"
+              (orderAmountChanged)="orderAmountChanged($event)"></order-item>
 </ul>
 
 <div>Total: <strong>{{ order.orderTotal }}</strong></div>

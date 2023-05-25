@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { OrderItem } from './app.component';
 import { FormsModule } from '@angular/forms';
 
@@ -11,8 +11,13 @@ import { FormsModule } from '@angular/forms';
 export class OrderItemComponent implements OnInit {
 
   @Input() orderItem!: OrderItem;
+  @Output() orderAmountChanged = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() { }
+
+  amountChanged() {
+    this.orderAmountChanged.emit(this.orderItem.amount);
+  }
 }
