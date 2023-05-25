@@ -32,6 +32,7 @@ export class Order {
   selector: 'app-root',
   standalone: true,
   imports: [FormsModule, CommonModule, RouterOutlet, OrderItemComponent],
+  providers: [ BakeService ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
@@ -53,6 +54,10 @@ export class AppComponent {
     alert('Die Bestellung wird in ' +
               this.bakeService.calculateBakeTimeForOrder(this.order) +
               ' Minuten fertig gebachen sein');
+  }
+
+  orderAmountChanged(newOrderAmount: number) {
+    console.log('new order amount: ' + newOrderAmount);
   }
 
 }
