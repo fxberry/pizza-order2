@@ -40,11 +40,7 @@ export class OrderComponent implements OnInit {
 
   constructor(private bakeService: BakeService) {
     this.order.email = 'meine@email.com';
-    this.order.orderItems = [
-      { amount: 1, pizza: { name: 'Margaritha', price: 12 } },
-      { amount: 2, pizza: { name: 'Prosciutto', price: 16 } },
-      { amount: 3, pizza: { name: 'Hawaii', price: 18 } },
-    ];
+    this.order.orderItems = [];
   }
 
   submitOrder() {
@@ -56,6 +52,10 @@ export class OrderComponent implements OnInit {
 
   orderAmountChanged(newOrderAmount: number) {
     console.log('new order amount: ' + newOrderAmount);
+  }
+
+  addOrderItem() {
+    this.order.orderItems.push({ amount: 0, pizza: { name: '', price: 0 } });
   }
 
   ngOnInit() { }

@@ -1,6 +1,8 @@
 <h1>Bestellformular</h1>
 
 <div>Email: <input type="text" [(ngModel)]="order.email"></div>
+
+<button type="button" (click)="addOrderItem()">Order Item hinzufügen</button>
 <ul>
   <order-item *ngFor="let orderItem of order.orderItems"
               [orderItem]="orderItem"
